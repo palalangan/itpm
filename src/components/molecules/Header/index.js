@@ -3,7 +3,7 @@ import React from 'react';
 import {IconBack, Pic} from '../../../assets/icons';
 import {Gap} from '../../atoms';
 
-const Header = ({title, title2, pic, onBack}) => {
+const Header = ({title, title2, onBack}) => {
   return (
     <View style={styles.container}>
       {onBack && (

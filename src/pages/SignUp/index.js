@@ -25,7 +25,7 @@ const SingUp = ({navigation}) => {
         <Gap height={24} />
         <Button
           title={'Continue'}
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => navigation.navigate('MainMenu')}
         />
       </View>
     </View>

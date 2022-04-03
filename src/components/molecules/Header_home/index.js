@@ -1,9 +1,15 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import {IconBack, Pic} from '../../../assets/icons';
 import {Gap} from '../../atoms';
 
-const Header = ({title, title2, pic, onBack}) => {
+const Header = ({title, title2, onBack}) => {
   return (
     <View style={styles.container}>
       {onBack && (
@@ -14,14 +20,22 @@ const Header = ({title, title2, pic, onBack}) => {
         </TouchableOpacity>
       )}
       <Gap width={26} />
-      <Text style={styles.text}>{title}</Text>
-      <Text style={styles.text_2}>{title2}</Text>
-      {/* <Pic style={styles.test} /> */}
+      <View style={styles.lapisan1}>
+        <View>
+          <Text style={styles.text}>{title}</Text>
+          <Text style={styles.text_2}>{title2}</Text>
+        </View>
+        <View style={styles.pic}>
+          <Pic />
+        </View>
+      </View>
     </View>
   );
 };
 
 export default Header;
+
+const windowHeight = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
@@ -44,11 +58,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   pic: {
-    paddingLeft: 99,
-    alignSelf: 'flex-end',
-    flexDirection: 'row',
+    paddingLeft: 150,
+    alignSelf: 'flex-start',
+    flexDirection: 'column',
   },
-  test: {
-    alignSelf: 'flex-end',
+  lapisan1: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });

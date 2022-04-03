@@ -1,7 +1,17 @@
 import Logo from './Logo.svg';
 import IconBack from './icon-back.svg';
 import Pic from './pic.svg';
-import Home_button from './home_button.svg';
-import Transaction from './transactions.svg';
+import HomeActive from './HomeActive.svg';
+import HomeNotActive from './HomeNotActive.svg';
+import FrameActive from './FrameActive.svg';
+import FrameNotActive from './FrameNotActive.svg';
 
-export {Logo, IconBack, Pic, Home_button, Transaction};
+export {
+  Logo,
+  IconBack,
+  Pic,
+  HomeActive,
+  HomeNotActive,
+  FrameActive,
+  FrameNotActive,
+};

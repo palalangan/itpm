@@ -1,9 +1,8 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header_home} from '../../components';
-import {Home_button, Transaction} from '../../assets/icons';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.page}>
       <Header_home title="Money Tracker" title2="Track your money" />
@@ -25,21 +24,17 @@ const Home = () => {
       <View style={styles.contentWrapper1}>
         <Text style={styles.text}>Add Transaction</Text>
         <Gap height={8.81} />
-        <Button textColor="#020202" title={'Cash On Hand'} />
+        <Button
+          textColor="#020202"
+          title={'Cash On Hand'}
+          onPress={() => navigation.navigate('TransactionHand')}
+        />
         <Gap height={18.04} />
-        <Button textColor="#020202" title={'Cash On Bank'} />
-      </View>
-      <View style={styles.contentWrapper2}>
-        <View style={styles.test}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('SignUp')}
-            activeOpacity={0.7}>
-            <Home_button style={styles.home_button} />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.7}>
-            <Transaction style={styles.transaction} />
-          </TouchableOpacity>
-        </View>
+        <Button
+          textColor="#020202"
+          title={'Cash On Bank'}
+          onPress={() => navigation.navigate('TransactionBank')}
+        />
       </View>
     </View>
   );
@@ -66,6 +61,7 @@ const styles = StyleSheet.create({
     paddingTop: 10.6,
     marginTop: 20,
     paddingBottom: 161.27,
+    marginBottom: 25,
   },
   contentWrapper2: {
     flex: 1,
