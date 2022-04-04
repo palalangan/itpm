@@ -5,7 +5,7 @@ import {Button, Gap, Header, TextInput} from '../../components';
 const SignIn = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="sign in" />
+      <Header title="Sign in" />
       <View style={styles.contentWrapper}>
         <TextInput
           title="Email Address"

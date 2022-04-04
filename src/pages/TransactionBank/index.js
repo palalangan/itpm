@@ -1,10 +1,11 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
 
 const TransactionHand = ({navigation}) => {
   return (
-    <View style={styles.page}>
+    <ScrollView>
+      <View style={styles.page}>
       <Header title="Cash On Bank" onBack={() => navigation.goBack()} />
       <View style={styles.contentWrapper}>
         <TextInput title={'Description'} placeholder="Add the description" />
@@ -44,6 +45,8 @@ const TransactionHand = ({navigation}) => {
         </View>
       </View>
     </View>
+    </ScrollView>
+    
   );
 };
 
@@ -67,8 +70,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 24,
     marginTop: 10,
-    paddingTop: 11,
-    padding: 5,
+    paddingTop: 21,
+    padding: 20,
     borderRadius: 10,
     
     //shadow contener Last 3 Transactions

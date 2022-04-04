@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
+    color: '#020202', 
     fontSize: 32,
     fontFamily: 'Poppins-Regular',
   },
