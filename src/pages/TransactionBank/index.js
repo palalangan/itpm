@@ -70,15 +70,17 @@ const styles = StyleSheet.create({
     paddingTop: 11,
     padding: 5,
     borderRadius: 10,
-    shadowColor: '#000',
+    
+    //shadow contener Last 3 Transactions
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: 2,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-
-    elevation: 8,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    
+    elevation: 5,
   },
   text: {
     fontSize: 16,
