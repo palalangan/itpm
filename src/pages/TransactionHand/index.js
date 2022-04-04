@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 24,
     paddingTop: 20,
+    paddingBottom: 52,
     marginTop: 24,
   },
   contentWrapper1: {
@@ -70,8 +71,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 24,
     marginTop: 10,
-    paddingTop: 21,
-    padding: 20,
+    paddingTop: 10,
+    padding: 10,
     borderRadius: 10,
     
     //shadow contener Last 3 Transactions
