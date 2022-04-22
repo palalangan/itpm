@@ -10,7 +10,7 @@ const Home = ({navigation}) => {
         <Text style={styles.text}>Your Balance</Text>
         <Text style={styles.text2}>Rp. 10.000.000</Text>
         <Text style={styles.line}>
-          __________________________________________________
+          ______________________________________________________
         </Text>
         <View style={styles.test}>
           <Text style={styles.text3}>Cash On Hand</Text>
@@ -97,8 +97,9 @@ const styles = StyleSheet.create({
   },
   line: {
     lineHeight: 1,
-    paddingHorizontal: 24,
-    marginTop: 18,
+    paddingHorizontal: 10,
+    marginTop: 10,
+    color: '#000000',
   },
   test: {
     flexDirection: 'row',

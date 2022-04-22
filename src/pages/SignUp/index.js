@@ -1,17 +1,57 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import React, {useState} from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
+import {launchImageLibrary} from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
 const SingUp = ({navigation}) => {
+  const [photo, setPhoto] = useState('');
+
+  const [hasPhoto, setHasPhoto] = useState(false);
+
+  const getPhoto = async () => {
+    const result = await launchImageLibrary({
+      maxHeight: 200,
+      maxWidth: 200,
+      includeBase64: true,
+    });
+
+    if (result.didCancel) {
+      setHasPhoto(false);
+      showMessage({
+        message: 'Upload foto dibatalkan',
+        type: 'default',
+        backgroundColor: '#D9435E',
+        color: 'white',
+      });
+    } else {
+      setPhoto(result.assets[0].uri);
+      setHasPhoto(true);
+      showMessage({
+        message: 'Foto telah terupload',
+        type: 'default',
+        backgroundColor: '#55CB95',
+        color: 'white',
+      });
+    }
+  };
+
   return (
     <View style={styles.Page}>
       <Header title="Sign Up" onBack={() => navigation.goBack()} />
       <View style={styles.contentWrapper}>
         <View style={styles.avatarWrapper}>
           <View style={styles.border}>
-            <View style={styles.addPhoto}>
-              <Text style={styles.addPhotoText}>Add Photo</Text>
-            </View>
+            <TouchableOpacity onPress={getPhoto} activeOpacity={0.7}>
+              {!hasPhoto && (
+                <View style={styles.addPhoto}>
+                  <Text style={styles.addPhotoText}>Add Photo</Text>
+                </View>
+              )}
+              {hasPhoto && (
+                <Image source={{uri: photo}} style={styles.avatar} />
+              )}
+            </TouchableOpacity>
           </View>
         </View>
         <TextInput title={'Full name'} placeholder="Enter your full name" />
@@ -50,6 +90,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F0F0',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 90,
+  },
+  avatar: {
+    height: 90,
+    width: 90,
     borderRadius: 90,
   },
   addPhotoText: {

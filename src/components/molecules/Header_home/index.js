@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   text: {
-    fontSize: 22,
+    fontSize: 25,
     fontFamily: 'Poppins-Medium',
     color: '#020202',
   },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   pic: {
-    paddingLeft: 150,
+    paddingLeft: 110,
     alignSelf: 'flex-start',
     flexDirection: 'column',
   },
