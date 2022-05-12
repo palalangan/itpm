@@ -1,12 +1,6 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {IconBack, Pic} from '../../../assets/icons';
+import {IconBack, Pic_dua} from '../../../assets/icons';
 import {Gap} from '../../atoms';
 
 const Header = ({title, title2, onBack}) => {
@@ -26,7 +20,7 @@ const Header = ({title, title2, onBack}) => {
           <Text style={styles.text_2}>{title2}</Text>
         </View>
         <View style={styles.pic}>
-          <Pic />
+          <Pic_dua />
         </View>
       </View>
     </View>
@@ -34,8 +28,6 @@ const Header = ({title, title2, onBack}) => {
 };
 
 export default Header;
-
-const windowHeight = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header_home} from '../../components';
 
@@ -8,20 +8,20 @@ const Home = ({navigation}) => {
       <Header_home title="Money Tracker" title2="Track your money" />
       <View style={styles.contentWrapper}>
         <Text style={styles.text}>Your Balance</Text>
-        <Text style={styles.text2}>Rp. 10.000.000</Text>
+        <Text style={styles.text1}>Rp. 10.000.000</Text>
         <Text style={styles.line}>
           ______________________________________________________
         </Text>
-        <View style={styles.test}>
-          <Text style={styles.text3}>Cash On Hand</Text>
-          <Text style={styles.text4}>Rp. 4.000.000</Text>
+        <View style={styles.contentWrapper1}>
+          <Text style={styles.text2}>Cash On Hand</Text>
+          <Text style={styles.text2}>Rp. 4.000.000</Text>
         </View>
-        <View style={styles.test}>
-          <Text style={styles.text3}>Cash On Bank</Text>
-          <Text style={styles.text4}>Rp. 6.000.000</Text>
+        <View style={styles.contentWrapper1}>
+          <Text style={styles.text2}>Cash On Bank</Text>
+          <Text style={styles.text2}>Rp. 6.000.000</Text>
         </View>
       </View>
-      <View style={styles.contentWrapper1}>
+      <View style={styles.contentWrapper}>
         <Text style={styles.text}>Add Transaction</Text>
         <Gap height={8.81} />
         <Button
@@ -52,23 +52,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 13,
     marginTop: 20,
-    paddingBottom: 130,
-  },
-  contentWrapper1: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingHorizontal: 24,
-    paddingTop: 10.6,
-    marginTop: 20,
-    paddingBottom: 161.27,
-    marginBottom: 25,
-  },
-  contentWrapper2: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingHorizontal: 24,
-    paddingTop: 3,
-    marginTop: 25,
   },
   text: {
     fontSize: 16,
@@ -76,23 +59,16 @@ const styles = StyleSheet.create({
     paddingTop: 10.6,
     color: '#000000',
   },
-  text2: {
+  text1: {
     fontSize: 24,
     fontFamily: 'Poppins-SemiBold',
     paddingHorizontal: 93,
     color: '#000000',
   },
-  text3: {
+  text2: {
     fontSize: 14,
     fontFamily: 'Poppins-Medium',
     color: '#000000',
-    paddingTop: 20,
-  },
-  text4: {
-    fontSize: 14,
-    fontFamily: 'Poppins-Medium',
-    color: '#000000',
-    paddingLeft: 20,
     paddingTop: 20,
   },
   line: {
@@ -101,20 +77,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: '#000000',
   },
-  test: {
+  contentWrapper1: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  transaction: {
-    flexDirection: 'row',
-    marginLeft: 114,
-  },
-  home_button: {
-    flexDirection: 'row',
-    marginLeft: 40,
-    padding: 40,
-  },
-  button: {
-    color: '#020202',
+    justifyContent: 'space-between',
+    paddingRight: 145,
   },
 });

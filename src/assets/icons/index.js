@@ -5,6 +5,7 @@ import HomeActive from './HomeActive.svg';
 import HomeNotActive from './HomeNotActive.svg';
 import FrameActive from './FrameActive.svg';
 import FrameNotActive from './FrameNotActive.svg';
+import Pic_dua from './Pic_dua.svg';
 
 export {
   Logo,
@@ -14,4 +15,5 @@ export {
   HomeNotActive,
   FrameActive,
   FrameNotActive,
+  Pic_dua,
 };

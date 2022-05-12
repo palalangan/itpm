@@ -1,6 +1,12 @@
-import {StyleSheet, View} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput as TextInput_React_Native,
+} from 'react-native';
 import React from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
+import {showMessage} from 'react-native-flash-message';
 
 const SignIn = ({navigation}) => {
   return (
@@ -12,12 +18,28 @@ const SignIn = ({navigation}) => {
           placeholder="type your email address"
         />
         <Gap height={16} />
-        <TextInput title="Password" placeholder="type your password" />
+        <Text style={styles.Text}>Password</Text>
+        <TextInput_React_Native
+          style={styles.Input}
+          title="Password"
+          placeholder="Type your password"
+          secureTextEntry={true}
+        />
         <Gap height={24} />
-        <Button title="sign in" />
+        <Button
+          title="Sign in"
+          onPress={() => {
+            navigation.navigate('MainMenu');
+            showMessage({
+              message: 'Info',
+              description: 'Welcome to Money Tracker',
+              type: 'info',
+            });
+          }}
+        />
         <Gap height={12} />
         <Button
-          title="Creat New Account"
+          title="Create New Account"
           color="#8D92A3"
           textColor="white"
           onPress={() => navigation.navigate('SignUp')}
@@ -39,5 +61,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 26,
     marginTop: 24,
+  },
+  Text: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    marginBottom: 6,
+    color: '#000000',
+  },
+  Input: {
+    borderWidth: 1,
+    borderColor: '#020202',
+    borderRadius: 8,
+    paddingLeft: 10,
+    paddingHorizontal: 10,
   },
 });

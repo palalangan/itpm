@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import TabItem from '../TabItem';
 
@@ -58,5 +58,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 80,
     paddingVertical: 15,
+    marginTop: 3,
   },
 });

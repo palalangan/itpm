@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {IconBack, Pic} from '../../../assets/icons';
+import {IconBack} from '../../../assets/icons';
 import {Gap} from '../../atoms';
 
 const Header = ({title, title2, onBack}) => {

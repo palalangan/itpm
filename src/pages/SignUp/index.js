@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput as TextInput_React_Native,
+} from 'react-native';
 import React, {useState} from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
 import {launchImageLibrary} from 'react-native-image-picker';
@@ -61,11 +68,24 @@ const SingUp = ({navigation}) => {
           placeholder="Enter your email address"
         />
         <Gap height={16} />
-        <TextInput title={'Password'} placeholder="Enter your password" />
+        <Text style={styles.Text}>Password</Text>
+        <TextInput_React_Native
+          style={styles.Input}
+          title="Password"
+          placeholder="Type your password"
+          secureTextEntry={true}
+        />
         <Gap height={24} />
         <Button
           title={'Continue'}
-          onPress={() => navigation.navigate('MainMenu')}
+          onPress={() => {
+            navigation.navigate('SignIn');
+            showMessage({
+              message: 'Success',
+              description: 'Create Account',
+              type: 'success',
+            });
+          }}
         />
       </View>
     </View>
@@ -118,5 +138,18 @@ const styles = StyleSheet.create({
     marginTop: 26,
     marginBottom: 16,
     justifyContent: 'center',
+  },
+  Text: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    marginBottom: 6,
+    color: '#000000',
+  },
+  Input: {
+    borderWidth: 1,
+    borderColor: '#020202',
+    borderRadius: 8,
+    paddingLeft: 10,
+    paddingHorizontal: 10,
   },
 });

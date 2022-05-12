@@ -1,11 +1,13 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {Header} from '../../components';
 
 const Transaction = () => {
   return (
     <View style={styles.page}>
+      <Header title="Page Transaction" />
       <View style={styles.contentWrapper}>
-        <Text>Masih kosong :v</Text>
+        <Text>Masih Kosong</Text>
       </View>
     </View>
   );
