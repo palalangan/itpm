@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Header} from '../../components';
+import {Background2, Logo1} from '../../assets';
 
 const Transaction = () => {
   return (
@@ -8,6 +9,9 @@ const Transaction = () => {
       <Header title="Page Transaction" />
       <View style={styles.contentWrapper}>
         <Text>Masih Kosong</Text>
+        <View style={styles.logo}>
+          <Logo1 />
+        </View>
       </View>
     </View>
   );
@@ -25,5 +29,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 26,
     marginTop: 24,
+  },
+  logo: {
+    flex: 1,
+    height: 1.1,
+    width: 1.1,
+    resizeMode: 'contain',
+    aspectRatio: 100,
   },
 });

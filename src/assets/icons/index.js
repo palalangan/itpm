@@ -6,6 +6,10 @@ import HomeNotActive from './HomeNotActive.svg';
 import FrameActive from './FrameActive.svg';
 import FrameNotActive from './FrameNotActive.svg';
 import Pic_dua from './Pic_dua.svg';
+import Background from './Background.svg';
+import Background2 from './Background 2.svg';
+import Logo1 from './logoo.svg';
+import Kecil from './kecil.svg';
 
 export {
   Logo,
@@ -16,4 +20,8 @@ export {
   FrameActive,
   FrameNotActive,
   Pic_dua,
+  Background,
+  Background2,
+  Logo1,
+  Kecil,
 };

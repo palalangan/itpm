@@ -7,40 +7,42 @@ import {
 import React from 'react';
 import {Button, Gap, Header, TextInput} from '../../components';
 import {showMessage} from 'react-native-flash-message';
+import {Kecil, Logo1} from '../../assets';
 
 const SignIn = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="Sign in" />
+      {/* <Header title="Sign in" /> */}
       <View style={styles.contentWrapper}>
-        <TextInput
-          title="Email Address"
-          placeholder="type your email address"
-        />
+        <View style={styles.Logo1}>
+          <Kecil />
+        </View>
+        <TextInput title="Username" />
         <Gap height={16} />
         <Text style={styles.Text}>Password</Text>
         <TextInput_React_Native
           style={styles.Input}
           title="Password"
-          placeholder="Type your password"
           secureTextEntry={true}
         />
         <Gap height={24} />
         <Button
-          title="Sign in"
+          title="Login"
+          color="#53D654"
+          textColor="white"
           onPress={() => {
-            navigation.navigate('MainMenu');
+            navigation.navigate('SignIn');
             showMessage({
-              message: 'Info',
-              description: 'Welcome to Money Tracker',
-              type: 'info',
+              message: 'Error!!',
+              description: 'Data base not found!',
+              backgroundColor: 'red',
             });
           }}
         />
         <Gap height={12} />
         <Button
-          title="Create New Account"
-          color="#8D92A3"
+          title="Register"
+          color="#53D654"
           textColor="white"
           onPress={() => navigation.navigate('SignUp')}
         />
@@ -54,6 +56,7 @@ export default SignIn;
 const styles = StyleSheet.create({
   page: {
     flex: 1,
+    backgroundColor: 'white',
   },
   contentWrapper: {
     flex: 1,
@@ -74,5 +77,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingLeft: 10,
     paddingHorizontal: 10,
+  },
+  Logo1: {
+    alignItems: 'center',
+    paddingBottom: 30,
   },
 });
